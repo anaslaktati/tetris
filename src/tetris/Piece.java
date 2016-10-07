@@ -1,14 +1,9 @@
 package tetris;
 
-import tetris.Cellule;
+import tetris.*;
 
 public class Piece 
 {
-    private static final int screenWidth = 500;
-    private static final int screenHeight = 500;
-    private static final int mouvVertical = 25;
-    private static final int mouvLateral = 25;
-    
     private int posX;
     private int posY;
         

@@ -2,19 +2,13 @@ package tetris;
 
 public class Plateau 
 {
-    private static final int screenWidth = 500;
-    private static final int screenHeight = 500;
+    private static final int screenSize = 500;
     private static final int mouvVertical = 25;
     private static final int mouvLateral = 25;
     
-    public int getScreenWidth()
+    public int getScreenSize()
     {
-        return this.screenWidth;
-    }
-
-    public int getScreenHeight()
-    {
-        return this.screenHeight;
+        return this.screenSize;
     }
 
     public int getMouvVertical()

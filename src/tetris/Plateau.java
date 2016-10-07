@@ -37,7 +37,8 @@ public class Plateau
 
     
     public static void main(String[] args) {
-        // TODO code application logic here
+        Piece p = new Piece();
+        p.toString();
     }
     
 }

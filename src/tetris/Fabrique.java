@@ -1,9 +1,25 @@
 package tetris;
 
-/**
- *
- * @author anas
- */
+import tetris.Piece;
+
+
 public class Fabrique {
+
+    Piece piece;
+    
+    public Fabrique() {
+        
+        
+        
+    }
+    
+    public Piece creerCarre(){
+        
+        
+        
+    }
+    
+    
+    
     
 }

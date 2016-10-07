@@ -7,10 +7,10 @@ public class Plateau
         
     }
     
-    public bool accepter()
-    {
-        
-    }
+//    public bool accepter()
+//    {
+//        
+//    }
     
     public void retirer()
     {
@@ -23,21 +23,21 @@ public class Plateau
     }
     
     private static final int screenSize = 500;
-    private static final int mouvVertical = 25;
-    private static final int mouvLateral = 25;
+    private static final int mouvement = 25;
     
     public int getScreenSize()
     {
         return this.screenSize;
     }
 
-    public int getMouvVertical()
+    public int getMouvement()
     {
-        return this.mouvVertical;
+        return this.mouvement;
     }
 
-    public int getMouvLateral()
-    {
-        return this.mouvLateral;
-    }    
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+    }
+    
 }

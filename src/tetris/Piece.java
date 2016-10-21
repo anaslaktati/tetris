@@ -10,17 +10,23 @@ public class Piece
         
     public Piece()
     {
-        this.tabpiece = fab.creerCarre();
+        this.tabpiece = fab.generate();
         this.posX = 0;
         this.posY = 0;
     }
 
-//    public Piece(int[][] tabpiece,int posX, int posY) {
-//        this.tabpiece = tabpiece;
-//        this.posX = posX;
-//        this.posY = posY;
-//    }
     
+    String afficherTab(){
+        String ret ="";
+        for(int i=0;i<4;i++){
+            ret += "{";
+            for(int j=0;j<16;j++){
+                ret+= tabpiece[i][j]+",";
+            }
+        ret += "}";    
+        }
+        return ret;
+    }            
     
     
     
@@ -37,9 +43,17 @@ public class Piece
         this.posX += plat.getMouvement();
     }
 
+    public void setPosX(int posX) {
+        this.posX = posX;
+    }
+
+    public void setPosY(int posY) {
+        this.posY = posY;
+    }
+
     @Override
     public String toString() {
-        return "Piece{" + "tabpiece=" + tabpiece + ", posX=" + posX + ", posY=" + posY + '}';
+        return "Piece{" + "tabpiece=" + afficherTab() + ", posX=" + posX + ", posY=" + posY + '}';
     }
     
     

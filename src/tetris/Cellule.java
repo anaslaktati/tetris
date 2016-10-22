@@ -2,17 +2,16 @@ package tetris;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javafx.scene.Parent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import tetris.Plateau;
 
-public class Cellule extends JPanel implements ActionListener {
+public class Cellule extends JPanel{
     
-    String nom; //couleur en ode graph
+    String nom; //couleur en mode graph
     int x,y; // coordonnées
     //instance plateau
     Plateau plat;
@@ -29,20 +28,20 @@ public class Cellule extends JPanel implements ActionListener {
     Timer timer;
     boolean isStarted = false;
     boolean isPaused = false ;
-    JLabel status;
+//    JLabel status;
     int linesSupp = 0;
 
     
     public Cellule(Plateau plat){
         setFocusable(true);
+        setPreferredSize(new Dimension(dimension/2  , dimension));
+        setBackground(Color.red);
         this.plat = plat;
         this.piece = new Piece[nbLines][nbColonnes];
-        timer = new Timer(400, this);
-        timer.start(); 
+//        timer = new Timer(400, this);
+//        timer.start(); 
         
-        status = plat.getStatus();
-        setPreferredSize(new Dimension(dimension/2  , dimension));
-        setBackground(Color.gray);
+//        status = plat.getStatus();
         
     }
     
@@ -50,6 +49,11 @@ public class Cellule extends JPanel implements ActionListener {
         this.nom = nom;
         this.x = x;
         this.y = y;
+    }
+    
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+        g.fillRect(1, 1, 1, 1);
     }
 
     public String getNom() {
@@ -75,30 +79,5 @@ public class Cellule extends JPanel implements ActionListener {
     public void setY(int y) {
         this.y = y;
     }
-    
-    private void pause() {
-        if (!isStarted)
-            return;
-
-        isPaused = !isPaused;
-        if (isPaused) {
-            timer.stop();
-            status.setText("paused");
-        } else {
-            timer.start();
-            status.setText(String.valueOf(linesSupp));
-        }
-        repaint();
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
-    
-    
-    
-  
+   
 }

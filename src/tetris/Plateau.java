@@ -1,12 +1,14 @@
 package tetris;
 
 import java.awt.BorderLayout;
+import java.awt.Graphics;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import java.time.Clock;
 import javax.swing.JLabel;
+
 
 public class Plateau  extends JFrame{        
     
@@ -16,8 +18,9 @@ public class Plateau  extends JFrame{
         private float temps;
         private boolean isPaused;
         private JLabel status;
+        private static final int screenSize = 500;
+        private static final int mouvement = 25;
 	
-	//private SidePanel side;
 	
     
     
@@ -28,10 +31,11 @@ public class Plateau  extends JFrame{
         super("Tetris");
         setLayout(new BorderLayout());
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setVisible(true);
 	setResizable(false);
         
-        this.status = new JLabel("0");
         this.cellule = new Cellule(this);
+        this.status = new JLabel("0");
 
         add(cellule, BorderLayout.CENTER);
         add(status, BorderLayout.SOUTH);
@@ -150,7 +154,7 @@ public class Plateau  extends JFrame{
         
         pack();
 	setLocationRelativeTo(null);
-	setVisible(true);
+	
     }
     
 //    public bool accepter()
@@ -168,8 +172,9 @@ public class Plateau  extends JFrame{
         
     }
     
-    private static final int screenSize = 500;
-    private static final int mouvement = 25;
+    
+    
+
     
     public JLabel getStatus(){
         return this.status;
@@ -189,7 +194,6 @@ public class Plateau  extends JFrame{
     
     public static void main(String[] args) {
         Plateau game = new Plateau();
-        
         
         
         
